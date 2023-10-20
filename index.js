@@ -40,6 +40,89 @@ async function run() {
         console.log(result);
         res.send(result);
     })
+
+    const cocolas = client.db("foodily").collection(" cocolas")
+    app.get('/cocolas', async (req ,res)=>{
+
+      const  cursor =  cocolas .find();
+      const result = await cursor. toArray();
+      res.send(result);
+
+    })
+    app.post('/cocolas',async (req,res)=>{
+      const newCocolas = req.body;
+      const result = await cocolas.insertOne(newCocolas);
+      res.send(result);
+    })
+    const mrindas = client.db("foodily").collection(" mrindas")
+    app.get('/mrindas', async (req ,res)=>{
+
+      const  cursor =  cocolas .find();
+      const result = await cursor. toArray();
+      res.send(result);
+
+    })
+    app.post('/mrindas',async (req,res)=>{
+      const newCocolas = req.body;
+      const result = await mrindas .insertOne(newCocolas);
+      res.send(result);
+    })
+
+    const pepsie = client.db("foodily").collection(" pepsie")
+    app.get('/pepsie', async (req ,res)=>{
+
+      const  cursor =  cocolas .find();
+      const result = await cursor. toArray();
+      res.send(result);
+
+    })
+    app.post('/pepsie',async (req,res)=>{
+      const newCocolas = req.body;
+      const result = await pepsie .insertOne(newCocolas);
+      res.send(result);
+    })
+
+    const coffiec = client.db("foodily").collection(" coffiec")
+    app.get('/coffiec', async (req ,res)=>{
+
+      const  cursor =  cocolas .find();
+      const result = await cursor. toArray();
+      res.send(result);
+
+    })
+    app.post('/coffiec',async (req,res)=>{
+      const newCocolas = req.body;
+      const result = await coffiec .insertOne(newCocolas);
+      res.send(result);
+    })
+    const redBulls = client.db("foodliy").collection(" redbulls")
+    app.get('/redbulls', async (req ,res)=>{
+
+      const  cursor =  cocolas .find();
+      const result = await cursor. toArray();
+      res.send(result);
+
+    })
+    app.post('/redbulls',async (req,res)=>{
+      const newCocolas = req.body;
+      const result = await redBulls.insertOne(newCocolas);
+      res.send(result);
+    })
+    const fantas = client.db("foodliy").collection(" fantas")
+    app.get('/fantas', async (req ,res)=>{
+
+      const  cursor =  cocolas .find();
+      const result = await cursor. toArray();
+      res.send(result);
+
+    })
+    app.post('/fantas',async (req,res)=>{
+      const newCocolas = req.body;
+      const result = await fantas.insertOne(newCocolas);
+      res.send(result);
+    })
+  
+    
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
