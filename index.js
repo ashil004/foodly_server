@@ -40,89 +40,99 @@ async function run() {
         console.log(result);
         res.send(result);
     })
-
-    const cocolas = client.db("foodily").collection(" cocolas")
-    app.get('/cocolas', async (req ,res)=>{
-
-      const  cursor =  cocolas .find();
-      const result = await cursor. toArray();
-      res.send(result);
-
-    })
-    app.post('/cocolas',async (req,res)=>{
-      const newCocolas = req.body;
-      const result = await cocolas.insertOne(newCocolas);
-      res.send(result);
-    })
-    const mrindas = client.db("foodily").collection(" mrindas")
-    app.get('/mrindas', async (req ,res)=>{
-
-      const  cursor =  cocolas .find();
-      const result = await cursor. toArray();
-      res.send(result);
-
-    })
-    app.post('/mrindas',async (req,res)=>{
-      const newCocolas = req.body;
-      const result = await mrindas .insertOne(newCocolas);
-      res.send(result);
-    })
-
-    const pepsie = client.db("foodily").collection(" pepsie")
-    app.get('/pepsie', async (req ,res)=>{
-
-      const  cursor =  cocolas .find();
-      const result = await cursor. toArray();
-      res.send(result);
-
-    })
-    app.post('/pepsie',async (req,res)=>{
-      const newCocolas = req.body;
-      const result = await pepsie .insertOne(newCocolas);
-      res.send(result);
-    })
-
-    const coffiec = client.db("foodily").collection(" coffiec")
-    app.get('/coffiec', async (req ,res)=>{
-
-      const  cursor =  cocolas .find();
-      const result = await cursor. toArray();
-      res.send(result);
-
-    })
-    app.post('/coffiec',async (req,res)=>{
-      const newCocolas = req.body;
-      const result = await coffiec .insertOne(newCocolas);
-      res.send(result);
-    })
-    const redBulls = client.db("foodliy").collection(" redbulls")
-    app.get('/redbulls', async (req ,res)=>{
-
-      const  cursor =  cocolas .find();
-      const result = await cursor. toArray();
-      res.send(result);
-
-    })
-    app.post('/redbulls',async (req,res)=>{
-      const newCocolas = req.body;
-      const result = await redBulls.insertOne(newCocolas);
-      res.send(result);
-    })
-    const fantas = client.db("foodliy").collection(" fantas")
-    app.get('/fantas', async (req ,res)=>{
-
-      const  cursor =  cocolas .find();
-      const result = await cursor. toArray();
-      res.send(result);
-
-    })
-    app.post('/fantas',async (req,res)=>{
-      const newCocolas = req.body;
-      const result = await fantas.insertOne(newCocolas);
-      res.send(result);
-    })
-  
+    const cocalola = client.db("foodily").collection('cocalola');
     
+     app.get('/cocalola', async (req, res)=>{
+      const cursor = cocalola .find();
+      const result = await cursor.toArray();
+      res.send(result);
+     })
+
+    app.post('/cocalola', async (req,res)=>{
+      const newCocalola = req.body;
+      console.log(newCocalola);
+      const result = await cocalola.insertOne(newCocalola);
+      console.log(result);
+      res.send(result);
+    })
+    const mirinda = client.db("foodily").collection('mirinda');
+    
+     app.get('/mirinda', async (req, res)=>{
+      const cursor = mirinda .find();
+      const result = await cursor.toArray();
+      res.send(result);
+     })
+
+    app.post('/mirinda', async (req,res)=>{
+      const newmirinda = req.body;
+      console.log(newmirinda);
+      const result = await mirinda.insertOne(newmirinda);
+      console.log(result);
+      res.send(result);
+    })
+    const pepsi = client.db("foodily").collection('pepsi');
+    
+     app.get('/pepsi', async (req, res)=>{
+      const cursor = pepsi .find();
+      const result = await cursor.toArray();
+      res.send(result);
+     })
+
+    app.post('/pepsi', async (req,res)=>{
+      const newpepsi = req.body;
+      console.log(newpepsi);
+      const result = await pepsi.insertOne(newpepsi);
+      console.log(result);
+      res.send(result);
+    })
+    const coffie = client.db("foodily").collection('coffie');
+    
+     app.get('/coffie', async (req, res)=>{
+      const cursor = coffie .find();
+      const result = await cursor.toArray();
+      res.send(result);
+     })
+
+    app.post('/coffie', async (req,res)=>{
+      const newcoffie = req.body;
+      console.log(newcoffie);
+      const result = await coffie.insertOne(newcoffie);
+      console.log(result);
+      res.send(result);
+    })
+    const redBull = client.db("foodily").collection('redbull');
+    
+     app.get('/redbull', async (req, res)=>{
+      const cursor = redBull .find();
+      const result = await cursor.toArray();
+      res.send(result);
+     })
+
+    app.post('/redbull', async (req,res)=>{
+      const newredBull = req.body;
+      console.log(newredBull);
+      const result = await redBull.insertOne(newredBull);
+      console.log(result);
+      res.send(result);
+    })
+
+    const fanta = client.db("foodily").collection('fanta');
+    
+     app.get('/fanta', async (req, res)=>{
+      const cursor = fanta .find();
+      const result = await cursor.toArray();
+      res.send(result);
+     })
+
+    app.post('/fanta', async (req,res)=>{
+      const newfanta = req.body;
+      console.log(newfanta);
+      const result = await fanta.insertOne(newfanta);
+      console.log(result);
+      res.send(result);
+    })
+    
+
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
